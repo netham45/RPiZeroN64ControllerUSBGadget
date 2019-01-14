@@ -38,7 +38,7 @@ The gamepads currently have 16 buttons instead of 10, I was unable to get the HI
 Configures systemd to run `start.sh`.
 
 ### start.sh  
-Loads the gamecon_gpio_rpi driver, calls the script that configures the USB gadget, then runs joy1.py through joy4.py in screen sessions.
+Loads the gamecon_gpio_rpi driver, calls the script that configures the USB gadget, then runs `joy1.py` through `joy4.py` in screen sessions.
 
 ### create_joysticks.sh  
 Initializes the gadget, adds 4 HID devices for each controller. 
@@ -81,7 +81,7 @@ char ReportDescriptor[63] = {
 ```
 
 ### joyX.py  
-Listens for input from the gamecon driver at /dev/input/jsX, unpacks the struct, tracks buttons/axis, repacks the struct into the format that the HID device needs, outputs the HID device's output to /dev/hidgX
+Listens for input from the gamecon driver at `/dev/input/jsX`, unpacks the struct, tracks buttons/axis, repacks the struct into the format that the HID device needs, outputs the HID device's output to `/dev/hidgX`
 
 ## Project  
 I took a 5"x3"x1.5" project box, drilled holes on the long faces on the sides  
