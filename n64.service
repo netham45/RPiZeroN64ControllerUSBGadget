@@ -1,0 +1,11 @@
+[Unit]
+Description=N64 Controller
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+KillMode=none
+ExecStart=/opt/n64/start.sh
+
+[Install]
+WantedBy=multi-user.target
