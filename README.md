@@ -1,4 +1,4 @@
-# RaspberryPiZeroN64JoystickDriver
+# RPiZeroN64ControllerUSBGadget
 This tool allows an Raspberry Pi Zero configured with the gamecon_gpio_rpi driver available at https://github.com/marqs85/gamecon_gpio_rpi/ to emulate four game controllers.
 
 ## Setup  
