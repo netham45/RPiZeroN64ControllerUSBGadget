@@ -16,7 +16,7 @@ Player 4 - Pin 26
 
 Official Nintendo cables use Red for VCC, Black for Ground, and Green for Data. I also have a third-party cable that does NOT follow this spec, and instead uses Black for VCC, White for Ground, and Red for Data.
 
-I put the files in `/opt/n64` . If you want to put them somewhere else edit the paths in n64.service and start.sh.
+I put the files in `/opt/n64` . If you want to put them somewhere else edit the paths in `n64.service` and `start.sh`.
 
 Copy `n64.service` to `/etc/systemd/system` and run
 ```
