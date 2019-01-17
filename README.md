@@ -16,6 +16,8 @@ Player 4 - Pin 26
 
 Official Nintendo cables seem to use Red for +3.3v, Black for Ground, and Green for Data from the three I've checked. I also have a third-party cable that does NOT follow this standard, and instead uses Black for +3.3v, White for Ground, and Red for Data.
 
+## Setup
+
 I put the files in `/opt/n64` . If you want to put them somewhere else edit the paths in `n64.service` and `start.sh`.
 
 Copy `n64.service` to `/etc/systemd/system` and run
