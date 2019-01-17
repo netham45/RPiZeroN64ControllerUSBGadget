@@ -5,7 +5,7 @@ This tool allows an Raspberry Pi Zero configured with the gamecon_gpio_rpi drive
 I used an RPi Zero W. I flashed Raspbian and connected it to my wifi to configure it by writing the wpa_supplicant.conf and ssh files to the boot partition.
 
 ## Wiring  
-I connected all four controllers to pin 1 for Positive and pin 6 for Ground. Here are the pins the data lines connect to:
+I connected all four controllers to Pin 1 for +3.3v and Pin 6 for Ground. Here are the pins the data lines connect to:
 
 ```
 Player 1 - Pin 27
@@ -14,7 +14,7 @@ Player 3 - Pin 7
 Player 4 - Pin 26
 ```
 
-Official Nintendo cables seem to use Red for Positive, Black for Ground, and Green for Data from the three I've checked. I also have a third-party cable that does NOT follow this standard, and instead uses Black for Positive, White for Ground, and Red for Data.
+Official Nintendo cables seem to use Red for +3.3v, Black for Ground, and Green for Data from the three I've checked. I also have a third-party cable that does NOT follow this standard, and instead uses Black for +3.3v, White for Ground, and Red for Data.
 
 I put the files in `/opt/n64` . If you want to put them somewhere else edit the paths in `n64.service` and `start.sh`.
 
