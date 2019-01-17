@@ -32,7 +32,7 @@ systemctl start n64
 The service doesn't support stopping, if you want to reload it you'll have to reboot.
 
 ## Usage  
-Once it's set up to auto-start and the controllers are wired you can plug just the USB port to the host and it'll get power off it too.
+Once it's set up to auto-start and the controllers are wired you can connect just the data port to the host and the RPi will get power off it too.
 It shows up on the host as four normal USB gamepads. I have tested it on my PC and on another RPi running RetroPie. It takes a minute or two to actually connect, since it has to boot.
 
 
