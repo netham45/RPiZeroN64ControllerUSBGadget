@@ -1,8 +1,10 @@
 # RPiZeroN64ControllerUSBGadget
-This tool allows an Raspberry Pi Zero configured with the gamecon_gpio_rpi driver available at https://github.com/marqs85/gamecon_gpio_rpi/ to emulate four game controllers.
 
-## Setup  
-I used an RPi Zero W. I flashed Raspbian and connected it to my wifi to configure it by writing the wpa_supplicant.conf and ssh files to the boot partition.
+## Description  
+This tool uses the Raspberry Pi's USB Gadget mode to emulate four USB gamepads with an analog stick, two more axis for the DPAD, and all buttons.  
+The gamepads currently have 16 buttons instead of 10, I was unable to get the HID descriptors to work with the padding bytes in there for 10. Buttons 11-16 can't be pressed.
+
+This needs the gamecon_gpio_rpi driver available at https://github.com/marqs85/gamecon_gpio_rpi/
 
 ## Wiring  
 I connected all four controllers to Pin 1 for +3.3v and Pin 6 for Ground. Here are the pins the data lines connect to:
@@ -18,7 +20,9 @@ Official Nintendo cables seem to use Red for +3.3v, Black for Ground, and Green 
 
 ## Setup
 
-I put the files in `/opt/n64` . If you want to put them somewhere else edit the paths in `n64.service` and `start.sh`.
+I used an RPi Zero W. I flashed Raspbian and connected it to my wifi to configure it by writing the wpa_supplicant.conf and ssh files to the boot partition. Have the GPIO joystick kernel driver available at https://github.com/marqs85/gamecon_gpio_rpi/ built and installed. 
+
+I put the files for this project in `/opt/n64` . If you want to put them somewhere else edit the paths in `n64.service` and `start.sh`.
 
 Copy `n64.service` to `/etc/systemd/system` and run
 ```
@@ -29,12 +33,10 @@ The service doesn't support stopping, if you want to reload it you'll have to re
 
 ## Usage  
 Once it's set up to auto-start and the controllers are wired you can plug just the USB port to the host and it'll get power off it too.
-It shows up on the host as four normal USB gamepads. I have tested it on my PC and on another RPi running RetroPie.
+It shows up on the host as four normal USB gamepads. I have tested it on my PC and on another RPi running RetroPie. It takes a minute or two to actually connect, since it has to boot.
 
 
-## Description  
-This tool uses the Raspberry Pi's USB Gadget mode to emulate four USB gamepads with an analog stick, two more axis for the DPAD, and all buttons.  
-The gamepads currently have 16 buttons instead of 10, I was unable to get the HID descriptors to work with the padding bytes in there for 10. Buttons 11-16 can't be pressed.
+## Files
 
 ### n64.service  
 Configures systemd to run `start.sh`.
