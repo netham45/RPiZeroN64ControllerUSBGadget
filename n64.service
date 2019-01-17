@@ -1,11 +1,13 @@
 [Unit]
 Description=N64 Controller
+Before=systemd-sysctl.service
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
 KillMode=none
 ExecStart=/opt/n64/start.sh
+ExecStop=screen -X -S n64 kill
 
 [Install]
 WantedBy=multi-user.target
